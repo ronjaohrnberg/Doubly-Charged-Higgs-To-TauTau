@@ -1,0 +1,25 @@
+from CRABClient.UserUtilities import config
+config = config()
+
+config.General.requestName = 'GEN2SIM_300_021123_part2'
+
+config.JobType.pluginName = 'Analysis' #'PrivateMC' 
+config.JobType.psetName = 'EGM-RunIISummer19UL18SIM-00022_1_300_part2_cfg.py'
+config.JobType.maxMemoryMB = 2000
+#config.JobType.allowUndistributedCMSSW = True
+
+config.Data.inputDataset = '/CRAB_PrivateMC/rohrnber-LHE2GEN_300_311023-9ecceeec9fd6f907b9d5dfb6f58ed18e/USER' #'/CRAB_PrivateMC/rohrnber-LHE2GEN_300_261023-9ecceeec9fd6f907b9d5dfb6f58ed18e/USER' #'/CRAB_PrivateMC/rohrnber-LHE2GEN_300_131023-9ecceeec9fd6f907b9d5dfb6f58ed18e/USER'
+config.Data.inputDBS = 'phys03' #'global'
+
+#config.Data.outputPrimaryDataset = 'GEN2SIM_300_s23_test500events_t2hip' #'CRAB_PrivateMC' 
+config.Data.splitting = 'FileBased' #'EventAwareLumiBased' #'LumiBased' #'FileBased' #'Automatic' #'EventBased'
+config.Data.unitsPerJob = 1
+NJOBS = 100 
+config.Data.totalUnits = 500000 #config.Data.unitsPerJob * NJOBS
+
+config.Data.outputDatasetTag = 'GEN2SIM_300_021123'
+
+config.Data.publication = True
+
+config.section_("Site")
+config.Site.storageSite = "T2_FI_HIP"  #"T3_CH_CERNBOX" 
